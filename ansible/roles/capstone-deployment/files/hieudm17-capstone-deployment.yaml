@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hieudm17-capstone-deployment
+  labels:
+    app: hieudm17-capstone-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: hieudm17-capstone-app
+  template:
+    metadata:
+      labels:
+        app: hieudm17-capstone-app
+    spec:
+      containers:
+        - name: hieudm17-capstone-app
+          image: hieugiddy/hieudm17-capstone
+          ports:
+            - containerPort: 80
