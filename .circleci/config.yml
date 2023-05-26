@@ -235,11 +235,11 @@ workflows:
             - test-build
           filters:
             branches:
-              only: [ main ]
+              only: [ master ]
       - deploy-infrastructure:
           filters:
             branches:
-              only: [ main ]
+              only: [ master ]
       - configure-infrastructure:
           requires:
             - deploy-infrastructure
